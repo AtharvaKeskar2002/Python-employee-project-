@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin dashboard| Employee Management System</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylelogin.css' %}" />
+    <style>
+      .outer{
+            margin: 50px;
+            padding: 0;
+            box-sizing: content-box;
+            background-color: #ede7f6;
+            padding: 20px;
+      }
+      .container{
+            margin: 50px;
+            padding: 0;
+            box-sizing: content-box;
+            background-color: #ede7f6;
+            padding: 20px;
+      }
+      .table,th,tr,td{
+        border: 1px solid black;
+        padding: 3px;
+      }
+      canvas{
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <h1>Alfred</h1>
+          <h1>Welcome to Admin pannel</h1>
+          <ul id="navli">
+            <li><a class="homeblack" href="{% url 'elogin' %}">LOG-OUT</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="outer">
+        <table class="table">
+          <tr>
+          <th>TSE name</th>
+          <th>case no.</th>
+          <th>region</th>
+
+          
+          </tr>
+
+          {% for d in employeeform %}
+          <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.case_number}}</td>
+            <td>{{d.region}}</td>
+
+          </tr>
+          {% endfor %}
+          
+        </table>
+
+        <table class="table">
+          <tr>
+          <th>overall score</th>
+          <th>customer service score</th>
+          <th>Knowledge & troubleshooting score</th>
+          </tr>
+          
+          
+          {% for i in employeeevalution %}
+          <tr> 
+            <td>{{i.overall_score}}</td>
+            <td>{{i.customer_score}}</td>
+            <td>{{i.knowledge_score}}</td>
+          </tr>
+          {% endfor %} 
+        </table>
+
+        </table>
+      </div>
+      <div class="container">
+        <canvas id="myChart"></canvas>
+      </div>
+      
+
+      <div class="container">
+        
+        <table class="table">
+          
+          <tr>
+          <th>Reason for score low:-</th>
+          <th>Reason exemplary:-</th>
+          <th>Reason deep flag:-</th>
+          <th>Note:-</th>
+          </tr>
+          {% for i in employeeevalution %}
+          <tr> 
+            <td>{{i.note}}</td>
+            <td>{{i.reason_exemplary}}</td>
+            <td>{{i.reason_deep}}</td>
+            <td>{{i.additionalnote}}</td>
+          </tr>
+        {% endfor %}
+      </div>
+      
+      <script>
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var overall_scores = [];
+          var customer_scores = [];
+          var knowledge_scores = [];
+          var tse_names = [];
+
+          {% for i in employeeevalution %}
+            overall_scores.push({{ i.overall_score }});
+            customer_scores.push({{ i.customer_score }});
+            knowledge_scores.push({{ i.knowledge_score }});
+          {% endfor %}
+
+          {% for d in employeeform %}
+          tse_names.push('{{ d.name }}');
+          {% endfor %}
+
+          var chart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: tse_names,
+                  datasets: [{
+                      label: 'Overall Score',
+                      data: overall_scores,
+                      backgroundColor: "rgba(0, 140, 255, 1)"
+                  }, {
+                      label: 'Customer Score',
+                      data: customer_scores,
+                      backgroundColor: "rgba(255, 0, 0, 1)"
+                  }, {
+                      label: 'Knowledge & Troubleshooting Score',
+                      data: knowledge_scores,
+                      backgroundColor: "rgba(0, 255, 0, 1)"
+                  }]
+              },
+              options: {
+                  scales: {
+                      yAxes: [{
+                          ticks: {
+                              beginAtZero: true
+                          }
+                      }]
+                  }
+              }         
+          });
+
+      </script>
+</body>
+</html>

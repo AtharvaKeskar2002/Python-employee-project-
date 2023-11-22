@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log In | Employee Management System</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/stylelogin.css' %}">
+	<script>
+		function fun(){
+			username = document.getElementsByName('mailuid').values
+			password = document.getElementsByName('pwd').values
+			if(username==password){
+				location="{% url 'admindashboard' %}";
+			}
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<h1>Alfred</h1>
+			<ul id="navli">
+				<li><a class="homeblack" href="{% url 'home' %}">HOME</a></li>
+				<li><a class="homeblack" href="{% url 'elogin' %}">Employee Login</a></li>
+				<li><a class="homered" href="{% url 'alogin' %}">Admin Login</a></li>
+				
+			</ul>
+		</nav>
+	</header>
+	<div class="divider"></div>
+
+	<div class="loginbox">
+    <img src="{% static 'assets/admin.png' %}" class="avatar">
+        <h1>Login Here</h1>
+        <form>
+            <p>username</p>
+            <input type="text" name="mailuid" placeholder="Enter Email Address" required="required">
+            <p>Password</p>
+            <input type="password" name="pwd" placeholder="Enter Password" required="required">
+            <input type="submit" name="login-submit" value="Login" onclick="fun()">
+           
+        </form>
+        
+    </div>
+</body>
+</html>

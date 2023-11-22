@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log In | Employee Management System</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylelogin.css' %}" />
+    <style>
+        .outer{
+            margin: 20px;
+            padding: 0;
+            box-sizing: content-box;
+
+        }
+        .container{
+            background-color: #ede7f6;
+            padding: 20px;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="password"],
+        select{
+            width: 100%;
+            padding: 5px;
+        }
+
+        input[type="submit"],
+        input[type="reset"]{
+            width : 95%
+        }
+        
+        input[type="submit"]:hover,
+        input[type="reset"]:hover{
+            color: red;
+            background-color: black;
+        }
+
+        
+    </style>
+    <script>
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        } 
+    </script>
+</head>
+<body>
+    <header>
+      <nav>
+        <h1>Alfred</h1>
+        <!-- <ul id="navli">
+          <li><a class="homeblack" href="{% url 'elogin' %}">LOG-OUT</a></li>
+        </ul> -->
+      </nav>
+    </header>
+    <div class="outer">
+    <div class="container">
+        <form method="post" onsubmit="return validateForm()">
+            {% csrf_token %}
+            <h1>Rapid Evaluation Production</h1>
+            <p> Please fill out the Case/TSE/Region and answer the following
+                questions about the case, followed by 1 optional free text feild that should only be
+                used if you scored a 1 for any of these questions. Please make careful note of the 
+                scoring key at the top of the next section.
+            </p>
+            <hr>
+            <h5>Hi, Alfred. When you submit this form the owner will see your name and email address </h5>
+            <h6>* Required</h6>
+            <h4>1. TSE Name *</h4>
+            <input type="text" placeholder="Name" name="TSE_name" required >
+            <h4>2. Salesforce Case Number *</h4>
+            <input type="number" required name="case_number" placeholder="XXXXX">
+            <h4>3. Region</h4>
+            <input type="radio" id="APAC" name="fav_language" value="APAC">
+            <label for="html">APAC</label><br>
+            <input type="radio" id="EMEA" name="fav_language" value="EMEA">
+            <label for="html">EMEA</label><br>
+            <input type="radio" id="Americas" name="fav_language" value="Americas">
+            <label for="html">Americas</label><br>
+            <br>
+            <input type="submit"  value="Next" class="success">
+        </form>
+    </div>
+</div>
+</body>
+</html>

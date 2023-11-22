@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log In | Employee Management System</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/stylelogin.css' %}">
+</head>
+<body>
+	<header>
+		<nav>
+			<h1>Alfred</h1>
+			<ul id="navli">
+				<li><a class="homeblack" href="{% url 'home' %}">HOME</a></li>
+				<li><a class="homered" href="{% url 'elogin' %}">Employee Login</a></li>
+				<li><a class="homeblack" href="{% url 'alogin' %}">Admin Login</a></li>
+				
+			</ul>
+		</nav>
+	</header>
+	<div class="divider"></div>
+
+	<div class="loginbox">
+    <img src="{% static 'assets/avatar.png' %}" class="avatar">
+        <h1>Login Here</h1>
+        <form action="" method="POST">
+			{% csrf_token %}
+            <p>Email</p>
+            <input type="text" name="email" placeholder="Enter Email Address" >
+            <p>Password</p>
+            <input type="password" name="pwd" placeholder="Enter Password">
+            <input type="submit" name="login-submit" value="Login">
+			<a href="{% url 'signin' %}" value="signup">Signup</a>
+           
+        </form>
+        
+    </div>
+
+{% if error == "no" %}
+<script>
+	alert('Logged in successfully');
+	window.location = ("{% url 'employeeform1' %}");
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+	alert('Invalid login credentials, try again');
+</script>		
+{% endif %}
+			
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>signin In | Employee Management System</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/stylelogin.css' %}">
+	<style>
+		.loginbox{
+			width: 320px;
+			height: 520px;
+			background: #000;
+			color: #fff;
+			top: 55%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%,-50%);
+			box-sizing: border-box;
+			padding: 70px 30px;
+		}
+	</style>
+	<script>
+		function checkpassword(){
+			if(document.signup.pwd.value!=document.signup.cpwd.value){
+				alert("password and confirm password does not match");
+				document.signup.cpwd.focus();
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<h1>Alfred</h1>
+			<ul id="navli">
+				<li><a class="homeblack" href="{% url 'home' %}">HOME</a></li>
+				<li><a class="homered" href="{% url 'elogin' %}">Employee Login</a></li>
+				<li><a class="homeblack" href="{% url 'alogin' %}">Admin Login</a></li>
+				
+			</ul>
+		</nav>
+	</header>
+	<div class="divider"></div>
+
+	<div class="loginbox">
+    <img src="{% static 'assets/avatar.png' %}" class="avatar">
+        <h1>signin HERE</h1>
+        <form  method="POST" name="signup" onsubmit="return checkpassword()">
+			{% csrf_token %}
+			<p>name</p>
+            <input type="text" name="name" placeholder="Enter your name" required>
+            <p>Email</p>
+            <input type="text" name="email" placeholder="Enter Email Address" required>
+            <p>Password</p>
+            <input type="password" name="pwd" placeholder="Enter Password" required>
+            <p>confirm Password</p>
+            <input type="password" name="cpwd" placeholder="Enter Password again" required>
+			<input type="submit" name="submit" value="signup">
+           
+        </form>
+        
+    </div>
+
+{% if error == "no" %}
+<script>
+	alert('Signup successful');
+	window.location = ("{% url 'elogin' %}");
+</script>
+{% endif %}
+{% if error == "yes" %}
+<script>
+	alert('Something went wrong try again');
+</script>		
+{% endif %}
+</body>
+</html>

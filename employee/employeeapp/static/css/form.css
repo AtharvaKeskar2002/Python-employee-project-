@@ -1,0 +1,11 @@
+body{
+	background-color: #ede7f6;
+	font-family: Roboto,Sans-serif;
+}
+.outer-div {
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid black;
+	align-items: center;
+	
+}

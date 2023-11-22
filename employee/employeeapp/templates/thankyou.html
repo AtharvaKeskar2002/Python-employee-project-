@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log In | Employee Management System</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylelogin.css' %}" />
+    <style>
+        .outer{
+            margin: 50px;
+            padding: 0;
+            box-sizing: content-box;
+
+        }
+        .container{
+            background-color: #ede7f6;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <nav>
+        <h1>Alfred</h1>
+        <ul id="navli">
+          <li><a class="homeblack" href="{% url 'elogin' %}">LOG-OUT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="outer">
+    <div class="container">
+        <h3>Thank you for your response.</h3>
+    </div>
+    </div>
+</body>
+</html>

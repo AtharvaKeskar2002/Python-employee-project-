@@ -1,0 +1,395 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log In | Employee Management System</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stylelogin.css' %}" />
+    <style>
+        .outer{
+            margin: 50px;
+            padding: 0;
+            box-sizing: content-box;
+
+        }
+        .container{
+            background-color: #ede7f6;
+            padding: 20px;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="password"],
+        select{
+            width: 100%;
+            padding: 5px;
+        }
+
+        input[type="submit"],
+        input[type="reset"]{
+            width : 95%
+        }
+        
+        input[type="submit"]:hover,
+        input[type="reset"]:hover{
+            color: red;
+            background-color: black;
+        }
+
+        
+    </style>
+    <script>
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language1");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language2");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language3");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language4");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language5");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language6");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language7");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language8");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("fav_language9");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("yesno");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("yesno1");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("yesno2");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("yesnona");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        function validateForm() {
+            var radios = document.getElementsByName("yesnona1");
+            var formValid = false;
+
+            var i = 0;
+            while (!formValid && i < radios.length) {
+                if (radios[i].checked) formValid = true;
+                i++;        
+            }
+
+            if (!formValid) alert("Must check some option!");
+            return formValid;   
+        }
+        
+    </script>
+</head>
+<body>
+    <header>
+      <nav>
+        <h1>Alfred</h1>
+        <!-- <ul id="navli">
+          <li><a class="homeblack" href="{% url 'elogin' %}">LOG-OUT</a></li>
+        </ul> -->
+      </nav>
+    </header>
+    <div class="outer">
+    <div class="container">
+        <form action="{% url 'thankyou' %}" method="post" onsubmit="return validateForm()">
+            {% csrf_token %}
+            <h1>Rapid Evaluation Production</h1>
+            <hr>
+            <h6>* Required</h6>
+            <h1>Case Evaluation Questions</h1>
+            <h1><p><small> All questions are graded (1) Failed,(2) Partial Credit, (3) Met our Standards,(4) Exceptional</small></p></h1>
+            <hr>
+            <h4>4. Conversation & maintainance of coustomer sentiment (Was the customer happier[or less upset] at the end of the interaction than they were at the beginning?) *</h4>
+            <input type="radio" id="1" value="1" name="fav_language">
+            <label for="html">1</label><br>
+            <input type="radio" id="2" value="2" name="fav_language">
+            <label for="html">2</label><br>
+            <input type="radio" id="3" value="3" name="fav_language">
+            <label for="html">3</label><br>
+            <input type="radio" id="4" value="4" name="fav_language">
+            <label for="html">4</label><br>
+            <h4>5. Limited delay between Support-> Customer interactions(Did the TSE work to limit hold times, duration of time between emails, etc.) *</h4>
+            <input type="radio" id="1"  value="1" name="fav_language1">
+            <label for="html">1</label><br>  
+            <input type="radio" id="2" value="2" name="fav_language1">
+            <label for="html">2</label><br>
+            <input type="radio" id="3" value="3" name="fav_language1">
+            <label for="html">3</label><br>
+            <input type="radio" id="4" value="4" name="fav_language1">
+            <label for="html">4</label><br>
+            <h4>6.Effective usage of resources(Did the TSE utilized the appropriate internal tools, documentation,team collabration,etc. to ensure that the case was resolved swiftly and effectively?) *</h4>
+            <input type="radio" id="1" value="1" name="fav_language2">
+            <label for="html">1</label><br>
+            <input type="radio" id="2" value="2" name="fav_language2">
+            <label for="html">2</label><br>
+            <input type="radio" id="3" value="3" name="fav_language2">
+            <label for="html">3</label><br>
+            <input type="radio" id="4" value="4" name="fav_language2">
+            <label for="html">4</label><br>
+            <h4>7. Product/Platform knowledge(Did the TSE demonstrate the appropriate level of product & platfrom knowledge[for their role, L1/L2/L3,ect.)during the lifetime of the case?) *</h4>
+            <input type="radio" id="1" value="1"  name="fav_language3">
+            <label for="html">1</label><br>
+            <input type="radio" id="2" value="2"  name="fav_language3">
+            <label for="html">2</label><br>
+            <input type="radio" id="3" value="3"  name="fav_language3">
+            <label for="html">3</label><br>
+            <input type="radio" id="4" value="4"  name="fav_language3">
+            <label for="html">4</label><br>
+            <h4>8.interactions per case (Did the TSE include all appropriate information in as few interactions as necessary?or did they trickle small bits of information over a large amount of interactions?) *</h4>
+            <input type="radio" id="1" value="1"  name="fav_language4">
+            <label for="html">1</label><br>
+            <input type="radio" id="2" value="2"  name="fav_language4">
+            <label for="html">2</label><br>
+            <input type="radio" id="3" value="3"  name="fav_language4">
+            <label for="html">3</label><br>
+            <input type="radio" id="4" value="4"  name="fav_language4">
+            <label for="html">4</label><br>
+            <h4>9.Time Management(Did the TSE demonstrate good usage of their time? Where there missed meetings? Wasthe analysis of provided evidence done in a reasonable amount of time? wasa jira quickly raised if needed or was there a significant delay?etc.) *</h4>
+            <input type="radio" id="1" value="1"  name="fav_language5">
+            <label for="html">1</label><br>
+            <input type="radio" id="2" value="2"  name="fav_language5">
+            <label for="html">2</label><br>
+            <input type="radio" id="3" value="3"  name="fav_language5">
+            <label for="html">3</label><br>
+            <input type="radio" id="4" value="4"  name="fav_language5">
+            <label for="html">4</label><br>
+            <h4>10.Capture of evidence appropriatefor specific issue encountered(Did the TSE Capture evidence appropriate to the issue the customer is experiencing? Did they request unnecessary information? Did they fail to request the appropriate evidence?) *</h4>
+            <input type="radio" id="1" value="1"  name="fav_language6">
+            <label for="html">1</label><br>
+            <input type="radio" id="2" value="2"  name="fav_language6">
+            <label for="html">2</label><br>
+            <input type="radio" id="3" value="3"  name="fav_language6">
+            <label for="html">3</label><br>
+            <input type="radio" id="4" value="4"  name="fav_language6">
+            <label for="html">4</label><br>
+            <h4>11.Quality of analysis of evidence captured during investigation(In the SF case did the TSE provide a summary of their analysis to the customer? Did the analysis of captured evidence clearly demonstrate an understanding of the customer issue, the expected behavior, how the customer experience deviated from the expected behavior, as well as troubleshooting steps attempted?) *</h4>
+            <input type="radio" id="1" value="1"  name="fav_language7">
+            <label for="html">1</label><br>
+            <input type="radio" id="2"  value="2" name="fav_language7">
+            <label for="html">2</label><br>
+            <input type="radio" id="3" value="3" name="fav_language7">
+            <label for="html">3</label><br>
+            <input type="radio" id="4"  value="4"name="fav_language7">
+            <label for="html">4</label><br>
+            <h4>12.value-add communication(Did the TSE ensures there was no redundancy in communication[i.e. not asking for something that has already been provided]? Did they use the appropriate terminology/jargon? Did they send any responses simply to buy time?[i.e. 'I am looking into your issue and will update you soon']) *</h4>
+            <input type="radio" id="1" value="1" name="fav_language8">
+            <label for="html">1</label><br>
+            <input type="radio" id="2" value="2" name="fav_language8">
+            <label for="html">2</label><br>
+            <input type="radio" id="3" value="3" name="fav_language8">
+            <label for="html">3</label><br>
+            <input type="radio" id="4" value="4" name="fav_language8">
+            <label for="html">4</label><br>
+            <h4>13.Detailed updates with clear ownership of action items(Did the TSE provide detailed updates to the customer during their interactions, with clear ownership of pending action items? Did they follow up on action items?) *</h4>
+            <input type="radio" id="1" value="1" name="fav_language9">
+            <label for="html">1</label><br>
+            <input type="radio" id="2" value="2" name="fav_language9">
+            <label for="html">2</label><br>
+            <input type="radio" id="3" value="3" name="fav_language9">
+            <label for="html">3</label><br>
+            <input type="radio" id="4" value="4" name="fav_language9">
+            <label for="html">4</label><br>
+            <h4>14.[optional] if you scored any of the previous questions with a '1',please leave a short description here as to whay the TSE scored so low.</h4>
+            <textarea class="form-control" aria-label="With textarea" name="whyscorelow" placeholder="Enter your answer"></textarea>
+            <h4>15. Flag this case for deep drive Evaluation? *</h4>
+            <input type="radio" id="yes" value="yes" name="yesno">
+            <label for="html">yes</label><br>
+            <input type="radio" id="no" value="no" name="yesno">
+            <label for="html">no</label><br>
+            <h4>16.Reason for deep drive flag?</h4>
+            <textarea class="form-control" aria-label="With textarea" placeholder="Enter your answer" name="reasondeepdrive"></textarea>
+            <h4>17. Flag this case for exemplary performance? *</h4>
+            <input type="radio" id="yes" value="yes" name="yesno1">
+            <label for="html">yes</label><br>
+            <input type="radio" id="no" value="no" name="yesno1">
+            <label for="html">no</label><br>
+            <h4>18.Reason for exemplary performance flag?</h4>
+            <textarea class="form-control" aria-label="With textarea" placeholder="Enter your answer" name="reasonexemplaryperformance"></textarea>
+            <h4>19.If there was a KB linked to the case was the content relevent? *</h4>
+            <input type="radio" id="yes" name="yesnona">
+            <label for="html">yes</label><br>
+            <input type="radio" id="no" name="yesnona">
+            <label for="html">no</label><br>
+            <input type="radio" id="na" name="yesnona">
+            <label for="html">#N/A</label><br>
+            <h4>20.If no KB content existed did the TSE follow the process for creating new KB content? *</h4>
+            <input type="radio" id="yes" name="yesnona1">
+            <label for="html">yes</label><br>
+            <input type="radio" id="no" name="yesnona1">
+            <label for="html">no</label><br>
+            <input type="radio" id="na" name="yesnona1">
+            <label for="html">#N/A</label><br>
+            <h4>21.Additional notes from Auditor (Optional)</h4>
+            <textarea class="form-control" aria-label="With textarea" placeholder="Enter your answer" name="additionalnote"></textarea>
+            <h4>22. Case Hygiene-Did the TSE properly review and update (if necessary) the Product/Component, Case Closure Codes, Problem Statement, etc? </h4>
+            <textarea class="form-control" aria-label="With textarea" placeholder="Enter your answer"></textarea>
+            <h4>23. Was this case taken from the Primary Skill Group for the TSE? *</h4>
+            <input type="radio" id="yes" name="yesno2">
+            <label for="html">yes</label><br>
+            <input type="radio" id="no" name="yesno2">
+            <label for="html">no</label><br><br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>
